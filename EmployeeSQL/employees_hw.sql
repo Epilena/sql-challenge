@@ -107,3 +107,10 @@ WHERE dt.dept_name = 'Sales' OR dt.dept_name = 'Development';
 SELECT last_name, COUNT(last_name) from employees 
 	Group By last_name
 	Order By COUNT (last_name) DESC;
+	
+--#search my employee id
+SELECT e.emp_no, e.last_name, e.first_name, e.sex, s.salary
+FROM salaries as s
+	INNER JOIN employees as e
+		ON (e.emp_no = s.emp_no)
+	WHERE e.emp_no = '499942';
